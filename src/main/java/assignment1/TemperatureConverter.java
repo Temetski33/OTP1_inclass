@@ -9,7 +9,7 @@ public class TemperatureConverter {
         return (tempC*9/5)+32;
     }
 
-    public boolean isExtremeTemperature(Double tempC) {
+    public static boolean isExtremeTemperature(Double tempC) {
         return tempC < -40 || tempC > 50;
     }
 }

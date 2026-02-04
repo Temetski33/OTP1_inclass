@@ -6,15 +6,23 @@ class TemperatureConverterTest {
 
     @org.junit.jupiter.api.Test
     void fahrenheitToCelsius() {
+        assertEquals(0.0, TemperatureConverter.fahrenheitToCelsius(32.0), 0.0001);
+        assertEquals(100.0, TemperatureConverter.fahrenheitToCelsius(212.0), 0.0001);
+        assertEquals(-40.0, TemperatureConverter.fahrenheitToCelsius(-40.0), 0.0001);
+        assertEquals(37.0, TemperatureConverter.fahrenheitToCelsius(98.6), 0.0001);
     }
 
     @org.junit.jupiter.api.Test
     void celsiusToFahrenheit() {
+        assertEquals(32.0, TemperatureConverter.celsiusToFahrenheit(0.0), 0.0001);
+        assertEquals(212.0, TemperatureConverter.celsiusToFahrenheit(100.0), 0.0001);
+        assertEquals(14.0, TemperatureConverter.celsiusToFahrenheit(-10.0), 0.0001);
+        assertEquals(98.6, TemperatureConverter.celsiusToFahrenheit(37.0), 0.0001);
 
     }
 
     @org.junit.jupiter.api.Test
     void isExtremeTemperature() {
-        assertTrue(TemperatureConverter.isExtremeTemperature((double) -60));
+        assertTrue(TemperatureConverter.isExtremeTemperature(-60.0));
     }
 }

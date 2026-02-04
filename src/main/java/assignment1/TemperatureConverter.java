@@ -1,11 +1,11 @@
 package assignment1;
 
 public class TemperatureConverter {
-    public double fahrenheitToCelsius(Double tempF) {
+    public static double fahrenheitToCelsius(Double tempF) {
         return (tempF-32)*5/9;
     }
 
-    public double celsiusToFahrenheit(Double tempC) {
+    public static double celsiusToFahrenheit(Double tempC) {
         return (tempC*9/5)+32;
     }
 

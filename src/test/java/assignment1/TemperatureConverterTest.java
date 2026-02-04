@@ -24,5 +24,14 @@ class TemperatureConverterTest {
     @org.junit.jupiter.api.Test
     void isExtremeTemperature() {
         assertTrue(TemperatureConverter.isExtremeTemperature(-60.0));
+        assertTrue(TemperatureConverter.isExtremeTemperature(-50.01));
+        assertTrue(TemperatureConverter.isExtremeTemperature(300.0));
+
+        assertFalse(TemperatureConverter.isExtremeTemperature(20.0));
+        assertFalse(TemperatureConverter.isExtremeTemperature(15.0432));
+
+        // Boundary values
+        assertFalse(TemperatureConverter.isExtremeTemperature(-40.0));
+        assertFalse(TemperatureConverter.isExtremeTemperature(50.0));
     }
 }

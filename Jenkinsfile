@@ -11,7 +11,11 @@ pipeline {
                 git 'https://github.com/Temetski33/OTP1_inclass.git'
             }
         }
-        stage('Build') { steps { script { def mvnHome = tool 'Maven3' bat "${mvnHome}\\bin\\mvn clean install" } } }
+        stage('Build') {
+            steps {
+                bat 'mvn clean install' // sh for linux and ios
+            }
+        }
         stage('Test') {
             steps {
                 bat 'mvn test'

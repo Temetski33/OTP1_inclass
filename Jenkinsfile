@@ -13,7 +13,8 @@ pipeline {
         }
         stage('Build') {
             steps {
-                bat 'mvn clean install' // sh for linux and ios
+                def mvnHome = tool 'Maven3'
+                bat "${mvnHome}\\bin\\mvn clean install"
             }
         }
         stage('Test') {

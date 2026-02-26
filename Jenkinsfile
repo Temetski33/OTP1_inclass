@@ -1,9 +1,9 @@
 pipeline {
     agent any
 
-    tools {
-          maven 'Maven3.9'
-      }
+    def mvnHome = tool 'Maven3.9'
+    sh "${mvnHome}/bin/mvn clean package"
+
 
     stages {
         stage('Checkout') {
